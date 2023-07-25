@@ -24,7 +24,7 @@ app.layout = html.Div([
     Input(component_id='controls-and-radio-item', component_property='value')
 )
 def update_graph(col_chosen):
-    fig = px.line(prices[col_chosen], x=prices[col_chosen].index, y='Close')
+    fig = px.line(prices[col_chosen].tail(100), x=prices[col_chosen].tail(100).index, y='Close')
     return fig
 
 if __name__ == '__main__':
