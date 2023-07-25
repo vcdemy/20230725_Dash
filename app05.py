@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 import yfinance as yf
 
-stocks = ['TSLA', 'MSFT', 'AMZN']
+stocks = ['TSLA', 'MSFT', 'AMZN', 'GOOG', 'AMD', 'NVDA']
 prices = {}
 for stock in stocks:
     prices[stock] = yf.download(stock)
@@ -14,7 +14,7 @@ app = Dash(__name__)
 app.layout = html.Div([
     html.Div(children='股票收盤價線圖'),
     html.Hr(),
-    dcc.RadioItems(options=stocks, value='TSLA', id='controls-and-radio-item'),
+    dcc.RadioItems(options=stocks, value='TSLA', id='controls-and-radio-item', inline=True),
     # dash_table.DataTable(data=df.to_dict('records'), page_size=6),
     dcc.Graph(figure={}, id='controls-and-graph')
 ])
