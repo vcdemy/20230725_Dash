@@ -20,7 +20,11 @@ app.layout = html.Div(
     Input("input1", "value")
 )
 def update_output(input1):
-    return df[df['公司代號']==input1].to_dict("records")
+    try:
+        stock = int(input1)
+    except Exception as e:
+        stock = 0
+    return df[df['公司代號']==stock].to_dict("records")
 
 
 if __name__ == "__main__":
