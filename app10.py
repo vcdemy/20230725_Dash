@@ -20,7 +20,7 @@ app.layout = html.Div(
     Input("input1", "value")
 )
 def update_output(input1):
-    return df[df['公司代號'==input1]].to_dict("records")
+    return df[df['公司代號']==input1].to_dict("records")
 
 
 if __name__ == "__main__":
