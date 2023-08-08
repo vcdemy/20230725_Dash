@@ -15,7 +15,7 @@ fig.savefig(chunk, format='png')
 chunk.seek(0)
 pngData = base64.b64encode(chunk.read()).decode('utf-8')
 
-# fig.savefig('data/test.png')
+# fig.savefig('test.png')
 
 # def b64_image(image_filename):
 #     with open(image_filename, 'rb') as f:
