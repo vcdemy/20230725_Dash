@@ -7,11 +7,11 @@ import io
 x = np.linspace(0, 2*np.pi, 1000)
 y = np.sin(x)
 
-fig = plt.figure()
+# fig = plt.figure()
 plt.plot(x, y)
 
 chunk = io.BytesIO()
-fig.savefig(chunk, format='png')
+plt.savefig(chunk, format='png')
 chunk.seek(0)
 pngData = base64.b64encode(chunk.read()).decode('utf-8')
 
